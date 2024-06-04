@@ -21,8 +21,8 @@ client.on('interactionCreate', async interaction => {
             }
 
             if (command.userPerms || command.botPerms) {
-                if (!interaction.memberPermissions.has(PermissionBitField.resolve(command.userPerms || []))) return interaction.reply(client.embeds.fail(`You don't have \`${command.userPerms}\` permissions.`, true));
-                if (!interaction.guild.members.cache.get(client.user.id).permissions.has(PermissionBitField.resolve(command.botPerms || []))) return interaction.reply(client.embeds.fail(`I don't have \`${command.botPerms}\` permissions.`, true));
+                if (!interaction.memberPermissions.has(PermissionBitField.resolve(command.userPerms || []))) return interaction.reply(client.embeds.fail(`You don't have \`${command.userPerms}\` permissions.`));
+                if (!interaction.guild.members.cache.get(client.user.id).permissions.has(PermissionBitField.resolve(command.botPerms || []))) return interaction.reply(client.embeds.fail(`I don't have \`${command.botPerms}\` permissions.`));
             }
 
             await command.run(client, interaction);
@@ -33,8 +33,8 @@ client.on('interactionCreate', async interaction => {
 
         } else {
             if (command.userPerms || command.botPerms) {
-                if (!interaction.memberPermissions.has(PermissionBitField.resolve(command.userPerms || []))) return interaction.reply(client.embeds.fail(`You don't have \`${command.userPerms}\` permissions.`, true));
-                if (!interaction.guild.members.cache.get(client.user.id).permissions.has(PermissionBitField.resolve(command.botPerms || []))) return interaction.reply(client.embeds.fail(`I don't have \`${command.botPerms}\` permissions.`, true));
+                if (!interaction.memberPermissions.has(PermissionBitField.resolve(command.userPerms || []))) return interaction.reply(client.embeds.fail(`You don't have \`${command.userPerms}\` permissions.`));
+                if (!interaction.guild.members.cache.get(client.user.id).permissions.has(PermissionBitField.resolve(command.botPerms || []))) return interaction.reply(client.embeds.fail(`I don't have \`${command.botPerms}\` permissions.`));
             }
             await command.run(client, interaction);
         }
