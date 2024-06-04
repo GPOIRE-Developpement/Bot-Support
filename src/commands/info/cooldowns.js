@@ -34,6 +34,6 @@ module.exports = {
 
         if(!regexDate.test(startDate)) return interaction.reply(client.embeds.fail(`Merci d'entrer un format de date valide !`));
 
-        console.log()
+        console.log(regexDate.test(startDate))
     }
 }; 
