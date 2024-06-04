@@ -60,7 +60,7 @@ module.exports.giveTraining = (userID, id, text) => {
         content: `<@${userID}>`,
         embeds: [
             {
-                color: c.pending,
+                color: c.support,
                 title: `📝 - Situation d'entrainement`,
                 fields: [
                     {
@@ -79,7 +79,7 @@ module.exports.sendTrainingToFormer = (member, questionID, question, expectedAns
         content: `<@${member.id}>`,
         embeds: [
             {
-                color: c.pending,
+                color: c.support,
                 title: `📝 - Situation d'entrainement`,
                 fields: [
                     {
@@ -106,7 +106,7 @@ module.exports.sendTrainingConfirm = () => {
         content: "",
         embeds: [
             {
-                color: c.pending,
+                color: c.done,
                 description: "Votre réponse a bien été transmise !",
             }
         ],
@@ -119,7 +119,7 @@ module.exports.sendTrainingAnswer = (fields, commentAuthor, comment) => {
     return {
         embeds: [
             {
-                color: c.pending,
+                color: c.support,
                 title: `📝 - Situation d'entrainement`,
                 fields: [
                     fields[0],

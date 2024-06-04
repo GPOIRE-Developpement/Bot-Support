@@ -8,7 +8,7 @@ module.exports = {
     run: async (client, interaction) => {
         let embed = {
             description: `🏓 Latency: \`${Math.round(client.ws.ping)} ms\``,
-            color: client.c.main
+            color: client.c.support
         }
         interaction.reply({ embeds: [embed] });
     }

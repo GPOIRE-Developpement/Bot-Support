@@ -1,8 +1,8 @@
 // '0x' is basically the same as '#'
 module.exports = {
-    main: 0x000000,
-    done: 0x00ff00,
+    done: 0x2ecc71,
     fail: 0xe74c3c,
-    error: 0xe5fa5a,
-    pending: 0xf9f9f9
+    error: 0xc0392b,
+    pending: 0x3498db,
+    support: 0xff6800
 }

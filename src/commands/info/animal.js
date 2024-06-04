@@ -28,7 +28,7 @@ module.exports = {
         if (animal) {
             let embed = {
                 description: `**${animal}**, I choose you!`,
-                color: client.c.main
+                color: client.c.support
             }
             return interaction.reply({ embeds: [embed] });
         }
