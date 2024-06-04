@@ -31,9 +31,11 @@ module.exports = {
         const reason = interaction.options.get('motif').value;
 
         regexDate = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/
-
         if(!regexDate.test(startDate)) return interaction.reply(client.embeds.fail(`Merci d'entrer un format de date valide !`));
 
-        console.log(regexDate.test(startDate))
+        [day, month, year] = date.split('/').map(Number);
+        dateObj = new Date(year, month - 1, day);
+
+        console.log(dateObj)
     }
 }; 
