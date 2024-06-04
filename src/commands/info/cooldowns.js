@@ -1,4 +1,5 @@
 const { ApplicationCommandType, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder} = require('discord.js');
+const date = new Date();
 
 module.exports = {
     name: 'cooldown',
@@ -30,12 +31,17 @@ module.exports = {
         const startDate = interaction.options.get('début').value;
         const reason = interaction.options.get('motif').value;
 
+        regexMember = /^[a-zA-Z0-9_-]+ - \d+$/
+        if(!regexMember.test(memberID)) return interaction.reply(client.embeds.fail(`Merci d'entrer un format de membre valide !`, true));
+
         regexDate = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/
-        if(!regexDate.test(startDate)) return interaction.reply(client.embeds.fail(`Merci d'entrer un format de date valide !`));
+        if(!regexDate.test(startDate)) return interaction.reply(client.embeds.fail(`Merci d'entrer un format de date valide !`, true));
 
-        [day, month, year] = date.split('/').map(Number);
+        [day, month, year] = startDate.split('/').map(Number);
         dateObj = new Date(year, month - 1, day);
+    
+        const endDate = dateObj.setMonth(dateObj.getMonth()+1);
 
-        console.log(dateObj)
+        
     }
 }; 
