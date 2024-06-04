@@ -19,16 +19,6 @@ module.exports.giveTraining = () => {
 }
 
 module.exports.answerTraining = () => {
-    /*const answer = new ButtonBuilder()
-    .setCustomId('training-formeranswer')
-    .setLabel('Répondre')
-    .setStyle(ButtonStyle.Primary);
-
-    const button = new ActionRowBuilder()
-        .addComponents(answer);
-
-    return [button]*/
-
     const select = new StringSelectMenuBuilder()
 		.setCustomId('training-formeranswer')
 		.setPlaceholder('Votre réponse')
