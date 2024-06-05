@@ -26,12 +26,15 @@ client.on('interactionCreate', async interaction => {
         await interaction.showModal(modal);
     }else if(interaction.customId == "certificate-choosedomain"){
         domain = interaction.values[0].charAt(0).toUpperCase() + interaction.values[0].slice(1)
-
-        interaction.edit(client.embeds.sendTrainingConfirm())
     
         client.channels.fetch(client.getChannels.cooldown).then(channel => {
             channel.send(client.embeds.certificateCooldown(interaction.message.embeds[0].fields, domain));
-        });
+
+            
+            interaction.reply(client.embeds.sendTrainingConfirm())
+        }).catch(error => {
+            interaction.reply(client.embeds.error)
+        })
     }
 })
 
