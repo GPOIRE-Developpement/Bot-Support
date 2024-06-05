@@ -25,9 +25,11 @@ client.on('interactionCreate', async interaction => {
 
         await interaction.showModal(modal);
     }else if(interaction.customId == "certificate-choosedomain"){
-        console.log(interaction)
+        domain = interaction.values[0].charAt(0).toUpperCase() + str.slice(1)
 
-        // Delete message
+        interaction.reply(client.embeds.certificateCooldown(interaction.message.embeds[0].fields, domain));
+
+        interaction.message.delete()
     }
 })
 

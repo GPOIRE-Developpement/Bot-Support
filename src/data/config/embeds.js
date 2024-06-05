@@ -185,7 +185,6 @@ module.exports.certificateCooldown = (fields, domain) => {
                     fields[3]
                 ]
             }
-        ],
-        ephemeral: true 
+        ]
     }
 }

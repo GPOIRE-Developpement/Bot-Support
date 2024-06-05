@@ -26,7 +26,7 @@ module.exports.answerTraining = () => {
 			new StringSelectMenuOptionBuilder()
 				.setLabel('Configuration')
 				.setDescription('Lors de certification configuration')
-				.setValue('config')
+				.setValue('configuration')
                 .setEmoji("🛠️"),
 			new StringSelectMenuOptionBuilder()
 				.setLabel('Glua')
@@ -36,12 +36,12 @@ module.exports.answerTraining = () => {
 			new StringSelectMenuOptionBuilder()
 				.setLabel('Mapping')
 				.setDescription('Lors de certification mapping')
-				.setValue('map')
+				.setValue('mapping')
                 .setEmoji("🗺️"),
 			new StringSelectMenuOptionBuilder()
 				.setLabel('Modélisation')
 				.setDescription('Lors de certification modélisation')
-				.setValue('model')
+				.setValue('modelisation')
                 .setEmoji("🧰"),
 			new StringSelectMenuOptionBuilder()
 				.setLabel('Reskin')
@@ -51,7 +51,7 @@ module.exports.answerTraining = () => {
 			new StringSelectMenuOptionBuilder()
 				.setLabel('Graphisme')
 				.setDescription('Lors de certification graphisme')
-				.setValue('design')
+				.setValue('graphisme')
                 .setEmoji("🖼️"),
         );
 
