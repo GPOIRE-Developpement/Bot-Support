@@ -25,7 +25,7 @@ client.on('interactionCreate', async interaction => {
 
         await interaction.showModal(modal);
     }else if(interaction.customId == "certificate-choosedomain"){
-        domain = interaction.values[0].charAt(0).toUpperCase() + str.slice(1)
+        domain = interaction.values[0].charAt(0).toUpperCase() + interaction.values[0].slice(1)
 
         interaction.reply(client.embeds.certificateCooldown(interaction.message.embeds[0].fields, domain));
 
