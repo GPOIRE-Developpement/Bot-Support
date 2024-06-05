@@ -38,7 +38,7 @@ module.exports = {
         if(!regexDate.test(startDate)) return interaction.reply(client.embeds.fail(`Merci d'entrer un format de date valide !`, true));
 
         [day, month, year] = startDate.split('/').map(Number);
-        dateObj = new Date(year, month - 1, day);
+        dateObj = new Date(year, month, day);
     
         endDate = new Date(dateObj.setMonth(dateObj.getMonth()+1))
 
