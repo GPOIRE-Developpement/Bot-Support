@@ -167,3 +167,25 @@ module.exports.certificateChooseDomain = (memberID, startDate, endDate, reason) 
         ephemeral: true 
     }
 }
+
+module.exports.certificateCooldown = (fields, domain) => {
+    return {
+        embeds: [
+            {
+                color: c.support,
+                title: "Cooldown Certification",
+                fields: [
+                    {
+                        name: "Domaine :",
+                        value: domain,
+                    },
+                    fields[0],
+                    fields[1],
+                    fields[2],
+                    fields[3]
+                ]
+            }
+        ],
+        ephemeral: true 
+    }
+}

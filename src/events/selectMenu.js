@@ -24,6 +24,10 @@ client.on('interactionCreate', async interaction => {
         modal.addComponents(information);
 
         await interaction.showModal(modal);
+    }else if(interaction.customId == "certificate-choosedomain"){
+        console.log(interaction)
+
+        // Delete message
     }
 })
 
