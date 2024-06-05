@@ -37,7 +37,7 @@ module.exports = {
         regexDate = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/
         if(!regexDate.test(startDate)) return interaction.reply(client.embeds.fail(`Merci d'entrer un format de date valide !`, true));
 
-        const [day, month, year] = dateString.split('/').map(Number);
+        const [day, month, year] = startDate.split('/').map(Number);
         const date = new Date(year, month - 1, day);
 
         const nextMonthDate = new Date(date);
