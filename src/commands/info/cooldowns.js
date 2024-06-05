@@ -40,7 +40,13 @@ module.exports = {
         [day, month, year] = startDate.split('/').map(Number);
         dateObj = new Date(year, month-1, day);
     
-        endDate = new Date(year, month, day);
+        endDate = new Date(dateObj.setMonth(dateObj.getMonth()+1))
+
+        console.log(dateObj)
+        console.log(endDate)
+
+        console.log(dateObj.getDay()+"/"+dateObj.getMonth()+"/"+dateObj.getFullYear())
+        console.log(endDate.getDay()+"/"+endDate.getMonth()+"/"+endDate.getFullYear())
 
         interaction.reply(client.embeds.certificateChooseDomain(memberID, dateObj.getDay()+"/"+dateObj.getMonth()+"/"+dateObj.getFullYear(), endDate.getDay()+"/"+endDate.getMonth()+"/"+endDate.getFullYear(), reason))
     }
