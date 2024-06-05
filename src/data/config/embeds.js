@@ -134,3 +134,37 @@ module.exports.sendTrainingAnswer = (fields, commentAuthor, comment) => {
         ]
     }
 }
+
+module.exports.certificateChooseDomain = (memberID, startDate, endDate, reason) => {
+    return {
+        embeds: [
+            {
+                color: c.support,
+                title: "Cooldown Certification",
+                fields: [
+                    {
+                        name: "Membre :",
+                        value: memberID,
+                    },
+                    {
+                        name: "Raison :",
+                        value: reason,
+                    },
+                    {
+                        name: "Début :",
+                        value: startDate,
+                        inline: true
+                    },
+                    {
+                        name: "Fin :",
+                        value: endDate,
+                        inline: true
+                    }
+                ]
+            }
+        ],
+        components: [
+
+        ], ephemeral: true 
+    }
+}
