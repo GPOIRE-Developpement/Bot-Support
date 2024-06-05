@@ -42,6 +42,6 @@ module.exports = {
     
         const endDate = dateObj.setMonth(dateObj.getMonth()+1);
 
-        interaction.reply(client.embeds.certificateChooseDomain(memberID, startDate, endDate, reason))
+        interaction.reply(client.embeds.certificateChooseDomain(memberID, dateObj.getDay()+"/"+dateObj.getMonth()+"/"+dateObj.getFullYear(), endDate, reason))
     }
 }; 
