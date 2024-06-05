@@ -37,17 +37,19 @@ module.exports = {
         regexDate = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/
         if(!regexDate.test(startDate)) return interaction.reply(client.embeds.fail(`Merci d'entrer un format de date valide !`, true));
 
-        [day, month, year] = startDate.split('/').map(Number);
-        dateObj = new Date(year, month-1, day);
-    
-        endDate = new Date(dateObj.setMonth(dateObj.getMonth()+1))
+        const [day, month, year] = dateString.split('/').map(Number);
+        const date = new Date(year, month - 1, day);
 
-        console.log(dateObj)
-        console.log(endDate)
+        const nextMonthDate = new Date(date);
+        nextMonthDate.setMonth(nextMonthDate.getMonth() + 1);
 
-        console.log(dateObj.getDay()+"/"+dateObj.getMonth()+"/"+dateObj.getFullYear())
-        console.log(endDate.getDay()+"/"+endDate.getMonth()+"/"+endDate.getFullYear())
+        function formatDate(date) {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
 
-        interaction.reply(client.embeds.certificateChooseDomain(memberID, dateObj.getDay()+"/"+dateObj.getMonth()+"/"+dateObj.getFullYear(), endDate.getDay()+"/"+endDate.getMonth()+"/"+endDate.getFullYear(), reason))
+        interaction.reply(client.embeds.certificateChooseDomain(memberID, formatDate(date), formatDate(nextMonthDate), reason))
     }
 }; 
