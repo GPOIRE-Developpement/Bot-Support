@@ -20,23 +20,47 @@ module.exports.giveTraining = () => {
 
 module.exports.answerTraining = () => {
     const select = new StringSelectMenuBuilder()
-		.setCustomId('training-formeranswer')
-		.setPlaceholder('Votre réponse')
+		.setCustomId('certificate-choosedomain')
+		.setPlaceholder('Le domaine de certification')
 		.addOptions(
 			new StringSelectMenuOptionBuilder()
-				.setLabel('Accepter')
-				.setDescription('Accepter sa question et ajouter un commentaire !')
-				.setValue('accept-traininganswer')
-                .setEmoji("✅"),
+				.setLabel('Configuration')
+				.setDescription('Lors de certification configuration')
+				.setValue('config')
+                .setEmoji("🛠️"),
 			new StringSelectMenuOptionBuilder()
-				.setLabel('Refuser')
-				.setDescription('Refuser sa question et ajouter un commentaire !')
-				.setValue('refuse-traininganswer')
-                .setEmoji("❌"),
+				.setLabel('Glua')
+				.setDescription('Lors de certification Glua')
+				.setValue('glua')
+                .setEmoji("💻"),
+			new StringSelectMenuOptionBuilder()
+				.setLabel('Mapping')
+				.setDescription('Lors de certification mapping')
+				.setValue('map')
+                .setEmoji("🗺️"),
+			new StringSelectMenuOptionBuilder()
+				.setLabel('Modélisation')
+				.setDescription('Lors de certification modélisation')
+				.setValue('model')
+                .setEmoji("🧰"),
+			new StringSelectMenuOptionBuilder()
+				.setLabel('Reskin')
+				.setDescription('Lors de certification reskin')
+				.setValue('reskin')
+                .setEmoji("🚗"),
+			new StringSelectMenuOptionBuilder()
+				.setLabel('Graphisme')
+				.setDescription('Lors de certification graphisme')
+				.setValue('design')
+                .setEmoji("🖼️"),
         );
 
     const row = new ActionRowBuilder()
         .addComponents(select);
 
     return [row]
+}
+
+module.exports.chooseDomain = () => {
+	
 }

@@ -163,8 +163,7 @@ module.exports.certificateChooseDomain = (memberID, startDate, endDate, reason) 
                 ]
             }
         ],
-        components: [
-
-        ], ephemeral: true 
+        components: b.answerTraining(),
+        ephemeral: true 
     }
 }
