@@ -30,7 +30,6 @@ client.on('interactionCreate', async interaction => {
         client.channels.fetch(client.getChannels.cooldown).then(channel => {
             channel.send(client.embeds.certificateCooldown(interaction.message.embeds[0].fields, domain));
 
-            
             interaction.reply(client.embeds.sendTrainingConfirm())
         }).catch(error => {
             interaction.reply(client.embeds.error)

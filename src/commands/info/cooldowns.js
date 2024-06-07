@@ -1,5 +1,4 @@
 const { ApplicationCommandType, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder} = require('discord.js');
-const date = new Date();
 
 module.exports = {
     name: 'cooldown',

@@ -188,3 +188,27 @@ module.exports.certificateCooldown = (fields, domain) => {
         ]
     }
 }
+
+module.exports.confirmSuggestion = () => {
+    return {
+        embeds: [
+            {
+                title: 'Suggestion',
+                color: c.done,
+                description: e.done + 'Votre suggestion a bien été publié dans le salon dédié'
+            }
+        ]
+    }
+}
+
+module.exports.suggestion = (reason) => {
+    return {
+        embeds: [
+            {
+                title: 'Nouvelle suggestion',
+                color: c.support,
+                description: reason
+            }
+        ]
+    }
+}
